@@ -13,6 +13,9 @@ my_account = f'k:{settings.MY_PUB_KEY}'
 while True:
     try:
         # read buy_wiz records and confirm owner is me
+        if not os.path.exists('buy_wiz_reocrds.txt'):
+            time.sleep(10)
+            continue
         rows = open('buy_wiz_reocrds.txt', 'r').read().split('\n')
         wiz_ids = []
         for row in rows:
