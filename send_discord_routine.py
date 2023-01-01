@@ -4,6 +4,9 @@ import time
 import requests
 import settings
 
+if not os.path.exists('ids-yaml'):
+    os.mkdir('ids-yaml')
+
 discord_url = settings.DISCORD_URL
 my_account = f'k:{settings.MY_PUB_KEY}'
 
@@ -20,8 +23,7 @@ while True:
                 if wiz_id not in wiz_ids and wiz_id not in records:
                     url = 'https://api.chainweb.com/chainweb/0.0/mainnet01/chain/1/pact/api/v1'
                     text = open('local-wiz.yaml', 'r').read().replace('$WIZ_IDS', str([wiz_id]))
-                    os.mkdir('ids-yaml')
-                    new_fn = f'ids-yaml/local-wizard-with-ids.yaml'
+                    new_fn = f'ids-yaml/local-wizard-with-ids-for-send.yaml'
                     with open(new_fn, 'w') as f:
                         f.write(text)
                     cmd = f'pact -a {new_fn} -l | curl -H "Content-Type: application/json" -d @- {url}/local'

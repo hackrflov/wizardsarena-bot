@@ -1,0 +1,8 @@
+code: (coin.get-balance "$MY_ACCOUNT")
+publicMeta:
+  chainId: '1'
+  sender: 'k:0000000000000000000000000000000000000000000000000000000000000000'
+  gasLimit: 720000
+  gasPrice: 0.0000000001
+  ttl: 7200
+networkId: 'mainnet01'

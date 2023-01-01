@@ -1,5 +1,6 @@
 *.txt
 settings.py
 keys.yaml
-yaml/
+*yaml/
 __pycache__
+tmp_*

@@ -17,7 +17,6 @@ text = open('buy-wizard.yaml', 'r').read() \
     .replace('$WIZ_OWNER_ACCOUNT', wiz_owner_account) \
     .replace('$WIZ_PRICE', wiz_price) \
     .replace('$MY_PUB_KEY', my_pub_key)
-os.mkdir('ids-yaml')
 new_fn = f'ids-yaml/buy-wizard-{wiz_id}.yaml'
 with open(new_fn, 'w') as f:
     f.write(text)
