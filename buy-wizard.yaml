@@ -1,0 +1,19 @@
+code: (free.wiz-arena.buy-wizard "$WIZ_ID"
+  "k:$MY_PUB_KEY"
+  )
+publicMeta:
+  chainId: '1'
+  sender: 'k:$MY_PUB_KEY'
+  gasLimit: 8000
+  gasPrice: 0.000000011
+  ttl: 600
+signers:
+  - public: $MY_PUB_KEY
+    caps:
+      - name: 'coin.TRANSFER'
+        args: ['k:$MY_PUB_KEY', '$WIZ_OWNER_ACCOUNT', $WIZ_PRICE]
+      - name: 'free.wiz-arena.ACCOUNT_GUARD'
+        args: ['k:$MY_PUB_KEY']
+      - name: 'coin.GAS'
+        args: []
+networkId: 'mainnet01'

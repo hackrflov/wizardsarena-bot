@@ -1,0 +1,5 @@
+*.txt
+settings.py
+keys.yaml
+yaml/
+__pycache__
